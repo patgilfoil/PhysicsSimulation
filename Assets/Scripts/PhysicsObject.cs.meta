@@ -3,7 +3,9 @@ guid: 8ef2029f0b1b0614ca6e28b209c1ff69
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - awakeMaterial: {fileID: 2100000, guid: 31d3267f0660e014fb1af85929247786, type: 2}
+  - asleepMaterial: {fileID: 2100000, guid: a0f027c9a0538b04b84e07b120c57cab, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
