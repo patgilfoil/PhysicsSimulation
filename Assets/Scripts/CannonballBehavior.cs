@@ -7,7 +7,7 @@ public class CannonballBehavior : MonoBehaviour
 {
     public float forceOnFire = 300;
 
-    private bool _canFire = false;
+    private bool _canFire = true;
 
     private Rigidbody _rigidbody = null;
 
