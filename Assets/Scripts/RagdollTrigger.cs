@@ -8,6 +8,6 @@ public class RagdollTrigger : MonoBehaviour
     {
         RagdollBehavior ragdoll = other.gameObject.GetComponentInParent<RagdollBehavior>();
         if (ragdoll != null)
-            ragdoll.RagdollOn = true;
+            ragdoll.RagdollEnabled = true;
     }
 }

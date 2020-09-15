@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(CharacterController))]
 public class RagdollBehavior : MonoBehaviour
 {
-    private Animator animator = null;
+    private Animator _animator = null;
+    private CharacterController _controller = null;
     public List<Rigidbody> rigidbodies = new List<Rigidbody>();
 
-    public bool RagdollOn
+    public bool RagdollEnabled
     {
-        get { return !animator.enabled; }
+        get { return !_animator.enabled; }
         set
         {
-            animator.enabled = !value;
+            _animator.enabled = !value;
+            _controller.enabled = !value;
             foreach (Rigidbody r in rigidbodies)
                 r.isKinematic = !value;
         }
@@ -22,7 +25,8 @@ public class RagdollBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+        _controller = GetComponent<CharacterController>();
 
         foreach (Rigidbody r in rigidbodies)
             r.isKinematic = true;
